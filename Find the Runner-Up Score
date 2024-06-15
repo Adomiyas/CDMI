@@ -1,0 +1,10 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    occ=arr.count(max(arr))
+    if occ>1:
+        for i in range(occ):
+            arr.pop(arr.index(max(arr)))
+    if occ==1:
+        arr.pop(arr.index(max(arr)))
+    print(max(arr))
