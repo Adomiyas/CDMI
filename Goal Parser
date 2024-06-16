@@ -1,0 +1,14 @@
+class Solution:
+    def interpret(self, command: str) -> str:
+       dec={"G":"G", "()":"o", "(al)":"al" }
+       l=len(command)
+       strs="" 
+       for i in range(l):
+        if i<l:
+         if command[i]=="(" and command[i+1]==")":
+            strs+=dec["()"]
+         elif command[i]=="(" and command[i+1]=="a":
+              strs+=dec["(al)"]
+         elif command[i]=="G":
+            strs+=dec["G"]
+       return strs
