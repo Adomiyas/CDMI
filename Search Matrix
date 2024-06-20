@@ -1,0 +1,4 @@
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+          tar = any(target in sub for sub in matrix)
+          return tar
