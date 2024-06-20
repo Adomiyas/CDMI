@@ -1,0 +1,9 @@
+class Solution:
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        x = len(arr)
+        max_ = -1 
+
+        for i in range(x - 1, -1, -1):
+            arr[i], max_ = max_, max(max_, arr[i])
+
+        return arr
