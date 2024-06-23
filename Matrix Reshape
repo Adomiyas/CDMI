@@ -1,0 +1,23 @@
+class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+           max=[[0]*c for _ in range(r)]
+           list=[0]*(len(mat)*len(mat[0]))
+           k=0
+           l=0
+           g=0
+           if len(mat)*len(mat[0])==r*c:
+              for a in range(len(mat)):
+               for b in range(len(mat[0])):
+                    list[k]=mat[a][b]
+                    k+=1
+            
+        
+            
+              for k in range(r):
+                for l in range(c):
+                  max[k][l]=list[g]
+                  g+=1
+                
+              return max
+           else:
+             return mat
