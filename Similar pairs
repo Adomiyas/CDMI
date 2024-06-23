@@ -1,0 +1,19 @@
+class Solution:
+    def similarPairs(self, words: List[str]) -> int:
+        sum=[" "]*len(words)
+        n=" "
+        k=0
+        con=0
+        for i in words:
+            for j in range(len(i)):
+              if i[j] not in n:
+                 sum[k]+=i[j]
+                 n+=i[j]
+                 sum[k]=''.join(sorted(sum[k]))
+            n=" "
+            k+=1
+        for k in range(len(sum)):
+           for j in sum[k+1:len(sum)]:
+              if sum[k]==j:
+                 con+=1
+        return con
