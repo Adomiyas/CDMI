@@ -1,0 +1,28 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+      n=0
+      con=0
+      l=0
+      sum=""
+      for i in strs[0]:
+         for j in strs[1:]:
+           if l<len(j):
+             if i in j[l]:
+                con+=1
+                n=strs.index(j)
+                strs[n]=j.replace(i,'1',1)
+            
+                
+
+           
+           
+         l+=1
+         if con==(len(strs)-1):
+           for k in range(1):
+             sum+=str(i)
+         elif con<(len(strs)):
+            break
+         n=0     
+         con=0
+         
+      return sum
