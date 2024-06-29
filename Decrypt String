@@ -1,0 +1,29 @@
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        dic={}
+        sub=""
+        de=""
+        n=1
+        for i in range(97, 123):
+            if i>=ord('a') and i<=  ord('i'): 
+                dic[str(n)]=chr(i)
+                n+=1
+     
+            else:
+               dic[str(n)+'#']=chr(i)
+               n+=1
+        n=-1
+        for j in range(len(s)):
+            if s.count("#")>=1 and j+2==s.index("#"):
+               n=s.index("#")
+               sub+=s[j]
+               sub+=s[j+1]
+               sub+=s[n]
+               de+=dic[sub]
+               sub=""
+               s=s.replace("#","*",1)
+            elif j==n-1 or j==n:
+               continue
+            else:
+               de+=dic[s[j]]
+        return de
